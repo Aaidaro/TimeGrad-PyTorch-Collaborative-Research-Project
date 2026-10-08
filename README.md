@@ -96,11 +96,11 @@ s_j=\begin{cases}
 The LSTM input concatenates normalized lagged observations, learned *dimension-identity* embeddings, and calendar Fourier features. With a compact notation for the input construction:
 
 ```math
-\mathbf{u}_t=\operatorname{concat}\!\left(
+\mathbf{u}_t=\mathrm{concat}\!\left(
 \left\{\mathbf{x}_{t-\ell}^{0}\oslash\mathbf{s}:\ell\in L\right\},
-\operatorname{vec}(E_{1:D}),\mathbf{c}_t\right),
+\mathrm{vec}(E_{1:D}),\mathbf{c}_t\right),
 \qquad
-\mathbf{h}_t=\operatorname{LSTM}(\mathbf{u}_t,\mathbf{h}_{t-1}),
+\mathbf{h}_t=\mathrm{LSTM}(\mathbf{u}_t,\mathbf{h}_{t-1}),
 \qquad
 \mathbf{r}_t=W_c\mathbf{h}_t+\mathbf{b}_c.
 ```
@@ -188,7 +188,7 @@ Training uses the standard *simplified* epsilon-prediction DDPM loss, conditiona
 n,\mathbf{r}_t\right)
 \right\|_2^2\right],
 \quad
-n\sim\operatorname{Uniform}\{1,\ldots,N\}.
+n\sim\mathrm{Uniform}\{1,\ldots,N\}.
 ```
 
 The equation is understood in **normalized observation space**, after applying the context-derived scale. The implementation averages mean-squared error over the batch, training target times, and dimensions. It trains on the *context-plus-prediction target positions* with **teacher forcing**; inference replaces future ground truth with recursively sampled observations.
@@ -289,7 +289,7 @@ The **current active training script** completes step 2 and saves its selected c
 For a univariate predictive cumulative distribution function `F` and observation `y`, the continuous ranked probability score is:
 
 ```math
-\operatorname{CRPS}(F,y)
+\mathrm{CRPS}(F,y)
 =\int_{-\infty}^{\infty}
 \left(F(z)-\mathbb{1}\{y\le z\}\right)^2\,\mathrm{d}z.
 ```
@@ -310,7 +310,7 @@ The reported `CRPS_sum` field in this repository uses the **normalized 19-quanti
 ```
 
 ```math
-\operatorname{CRPS}_{\mathrm{sum}}^{(19q)}
+\mathrm{CRPS}_{\mathrm{sum}}^{(19q)}
 =\frac{1}{|\mathcal{Q}|}\sum_{q\in\mathcal{Q}}
 \frac{2\sum_{w,t}\rho_q\!\left(z_{w,t}-\widehat z_{w,t}(q)\right)}
 {\sum_{w,t}|z_{w,t}|}.
@@ -319,7 +319,7 @@ The reported `CRPS_sum` field in this repository uses the **normalized 19-quanti
 The repository separately reports the **exact empirical-sample CRPS identity**, normalized analogously, under `empirical_CRPS_sum`:
 
 ```math
-\widehat{\operatorname{CRPS}}(y)
+\widehat{\mathrm{CRPS}}(y)
 =\frac{1}{S}\sum_{s=1}^{S}|\widehat y^{(s)}-y|
 -\frac{1}{2S^{2}}\sum_{s=1}^{S}\sum_{r=1}^{S}
 |\widehat y^{(s)}-\widehat y^{(r)}|.
