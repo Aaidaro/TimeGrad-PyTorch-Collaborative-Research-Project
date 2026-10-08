@@ -4,6 +4,15 @@
 
 **A research-oriented PyTorch reproduction of Rasul et al. (ICML 2021)**
 
+## Authors & Contributors
+
+This project was jointly developed by:
+
+- **[Aida roshani](https://github.com/Aaidaro)**
+- **[AmirHesam Kamalpour](https://github.com/AmirHesamKamalpour)**
+
+Both authors collaboratively contributed to the design, implementation, and development of this project.
+
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.10-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4%2B-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Paper](https://img.shields.io/badge/Paper-ICML%202021-34495e)](https://proceedings.mlr.press/v139/rasul21a.html)
