@@ -102,7 +102,7 @@ The LSTM input concatenates normalized lagged observations, learned *dimension-i
 \qquad
 \mathbf{h}_t=\operatorname{LSTM}(\mathbf{u}_t,\mathbf{h}_{t-1}),
 \qquad
-\mathbf{r}_t=W_c\mathbf{h}_t+\mathbf{b}_c.
+\mathbf{r}_t=W_c\mathbf{h}_t+\mathbf{b}_c
 ```
 
 The implementation uses a two-layer LSTM with **40 hidden units** and maps its state to a **100-dimensional conditioner**. The time features are sinusoidal encodings of frequency-dependent calendar attributes. The lag configuration is dataset-specific; it is **not** universally `[1, 24, 168]`.
