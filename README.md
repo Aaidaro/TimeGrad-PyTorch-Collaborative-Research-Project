@@ -13,6 +13,17 @@ This project was jointly developed by:
 
 Both authors collaboratively contributed to the design, implementation, and development of this project.
 
+<p align="left">
+  <img
+    src="https://thumb.wikimedia.org/wikipedia/en/thumb/f/fd/University_of_Tehran_logo.svg/1280px-University_of_Tehran_logo.svg.png"
+    alt="University of Tehran"
+    width="45"
+    align="center"
+  />
+  &nbsp;&nbsp;
+  <strong>School of Electrical and Computer Engineering, University of Tehran — 2026</strong>
+</p>
+
 [![Python](https://img.shields.io/badge/Python-%E2%89%A53.10-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4%2B-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Paper](https://img.shields.io/badge/Paper-ICML%202021-34495e)](https://proceedings.mlr.press/v139/rasul21a.html)
