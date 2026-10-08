@@ -1,0 +1,42 @@
+{
+  "benchmark": "solar",
+  "clip_nonnegative": false,
+  "dataset": "solar_nips",
+  "full_target_dim": 137,
+  "metrics": {
+    "CRPS_sum": 0.35074321569317823,
+    "CRPS_sum_unnormalized_mean": 1448.1696008139293,
+    "ND": 0.48696425681322875,
+    "NRMSE": 1.000930360973752,
+    "coverage_50": 0.09606360792492179,
+    "coverage_90": 0.2671619742787626,
+    "empirical_CRPS": 0.3768951134674685,
+    "empirical_CRPS_sum": 0.343210026687972
+  },
+  "num_samples": 100,
+  "paper_protocol_checks": {
+    "all_rolling_windows": true,
+    "context_equals_horizon": true,
+    "diffusion_schedule": true,
+    "full_target_dimension": true,
+    "lstm_architecture": true,
+    "noise_embedding": true,
+    "one_hundred_samples": true,
+    "optimizer_settings": true,
+    "reference_lags": true,
+    "reference_scaling": true,
+    "validation_interval": true,
+    "wavenet_architecture": true
+  },
+  "paper_protocol_complete": true,
+  "paper_reference": {
+    "CRPS_sum_mean": 0.287,
+    "CRPS_sum_reported_uncertainty": 0.02,
+    "independent_runs": 10,
+    "source": "TimeGrad paper Table 2"
+  },
+  "prediction_length": 24,
+  "rolling_windows_evaluated": 7,
+  "scaling": true,
+  "target_dim": 137
+}

@@ -1,0 +1,26 @@
+# Paper-scale Electricity profile.
+extends: base.yaml
+
+experiment:
+  name: timegrad_electricity_paper
+
+dataset:
+  benchmark: electricity
+  name: electricity_nips
+  prediction_length: 24
+
+model:
+  context_length: 24
+  lags: [1, 24, 168]
+  scaling: true
+
+validation:
+  windows: 7
+
+outputs:
+  checkpoint: models/saved_models/electricity_best.pt
+  history_csv: outputs/reports/electricity/training_history.csv
+  evaluation_report: outputs/reports/electricity/evaluation.json
+  run_summary: outputs/reports/electricity/run_summary.json
+  loss_plot: outputs/plots/electricity/training_loss.png
+  forecast_plot: outputs/plots/electricity/forecast.png

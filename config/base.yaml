@@ -1,0 +1,68 @@
+# Shared TimeGrad architecture and optimization settings from the paper.
+experiment:
+  name: timegrad_paper
+  seed: 20
+  device: auto
+  deterministic: true
+
+dataset:
+  source: gluonts
+  root: data/dataset
+  max_target_dim: null
+  regenerate: false
+  strict_paper_shape: true
+
+model:
+  context_length: 24
+  lags: [1, 24, 168]
+  rnn_layers: 2
+  rnn_hidden_size: 40
+  rnn_dropout: 0.1
+  dimension_embedding_dim: 1
+  conditioning_length: 100
+  diffusion_steps: 100
+  beta_start: 0.0001
+  beta_end: 0.1
+  diffusion_embedding_dim: 16
+  diffusion_projection_dim: 64
+  residual_layers: 8
+  residual_channels: 8
+  dilation_cycle_length: 2
+  scaling: true
+
+training:
+  epochs: 100
+  minimum_epochs: 2
+  steps_per_epoch: 100
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0
+  gradient_clip: 1.0
+  amp: true
+  num_workers: 0
+  early_stopping_patience: 5
+  minimum_delta: 0.00001
+  lr_plateau_factor: 0.5
+  lr_plateau_patience: 1
+
+validation:
+  # Dataset profiles set this to the official test-window count, matching the
+  # paper's statement that validation and test sets have equal size.
+  windows: 7
+  retrain_full: true
+
+evaluation:
+  num_samples: 100
+  max_windows: null
+  clip_nonnegative: false
+  plot_dimensions: 6
+
+outputs:
+  checkpoint: models/saved_models/best.pt
+  history_csv: outputs/reports/training_history.csv
+  evaluation_report: outputs/reports/evaluation.json
+  run_summary: outputs/reports/run_summary.json
+  loss_plot: outputs/plots/training_loss.png
+  forecast_plot: outputs/plots/forecast.png
+
+logging_config: config/logging.yaml

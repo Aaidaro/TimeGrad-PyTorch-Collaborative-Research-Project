@@ -1,0 +1,27 @@
+# Paper-scale Taxi profile. Kept as the default for backward compatibility.
+extends: base.yaml
+
+experiment:
+  name: timegrad_taxi_paper
+
+dataset:
+  benchmark: taxi
+  name: taxi_30min
+  prediction_length: 24
+
+model:
+  context_length: 24
+  lags: [1, 4, 12, 24, 48]
+  scaling: true
+
+validation:
+  windows: 56
+  stride: 1 # 24, 12 were tested 1 got the best results
+
+outputs:
+  checkpoint: models/saved_models/taxi_best.pt
+  history_csv: outputs/reports/taxi/training_history.csv
+  evaluation_report: outputs/reports/taxi/evaluation.json
+  run_summary: outputs/reports/taxi/run_summary.json
+  loss_plot: outputs/plots/taxi/training_loss.png
+  forecast_plot: outputs/plots/taxi/forecast.png

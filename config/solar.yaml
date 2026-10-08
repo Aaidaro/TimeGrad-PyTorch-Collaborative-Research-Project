@@ -1,0 +1,26 @@
+# Paper-scale Solar profile.
+extends: base.yaml
+
+experiment:
+  name: timegrad_solar_paper
+
+dataset:
+  benchmark: solar
+  name: solar_nips
+  prediction_length: 24
+
+model:
+  context_length: 24
+  lags: [1, 24, 168]
+  scaling: true
+
+validation:
+  windows: 7
+
+outputs:
+  checkpoint: models/saved_models/solar_best.pt
+  history_csv: outputs/reports/solar/training_history.csv
+  evaluation_report: outputs/reports/solar/evaluation.json
+  run_summary: outputs/reports/solar/run_summary.json
+  loss_plot: outputs/plots/solar/training_loss.png
+  forecast_plot: outputs/plots/solar/forecast.png

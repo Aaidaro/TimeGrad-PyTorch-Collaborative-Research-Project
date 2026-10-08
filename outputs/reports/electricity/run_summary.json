@@ -1,0 +1,72 @@
+{
+  "dataset": {
+    "benchmark": "electricity",
+    "frequency": "h",
+    "full_target_dim": 370,
+    "name": "electricity_nips",
+    "prediction_length": 24,
+    "rolling_windows_available": 7,
+    "train_shape": [
+      5833,
+      370
+    ]
+  },
+  "device": "cuda",
+  "elapsed_seconds": 1185.7580901000183,
+  "evaluation": {
+    "benchmark": "electricity",
+    "clip_nonnegative": false,
+    "dataset": "electricity_nips",
+    "full_target_dim": 370,
+    "metrics": {
+      "CRPS_sum": 0.024507419673814642,
+      "CRPS_sum_unnormalized_mean": 6551.26529916827,
+      "ND": 0.07401014624326235,
+      "NRMSE": 0.6140605232285736,
+      "coverage_50": 0.42054375804375804,
+      "coverage_90": 0.8091377091377091,
+      "empirical_CRPS": 0.05397828068066319,
+      "empirical_CRPS_sum": 0.023395892332100057
+    },
+    "num_samples": 100,
+    "paper_protocol_checks": {
+      "all_rolling_windows": true,
+      "context_equals_horizon": true,
+      "diffusion_schedule": true,
+      "full_target_dimension": true,
+      "lstm_architecture": true,
+      "noise_embedding": true,
+      "one_hundred_samples": true,
+      "optimizer_settings": true,
+      "reference_lags": true,
+      "reference_scaling": true,
+      "validation_interval": true,
+      "wavenet_architecture": true
+    },
+    "paper_protocol_complete": true,
+    "paper_reference": {
+      "CRPS_sum_mean": 0.0206,
+      "CRPS_sum_reported_uncertainty": 0.001,
+      "independent_runs": 10,
+      "source": "TimeGrad paper Table 2"
+    },
+    "prediction_length": 24,
+    "rolling_windows_evaluated": 7,
+    "scaling": true,
+    "target_dim": 370
+  },
+  "experiment": "timegrad_electricity_paper",
+  "mode": "all",
+  "model_parameters": 364536,
+  "python": "3.14.0",
+  "seed": 0,
+  "status": "completed",
+  "torch": "2.11.0+cu128",
+  "training": {
+    "best_epoch": 39,
+    "epochs_executed": 79,
+    "first_train_loss": 0.4882873484492302,
+    "last_train_loss": 0.07345741778612137,
+    "loss_improved_over_run": true
+  }
+}

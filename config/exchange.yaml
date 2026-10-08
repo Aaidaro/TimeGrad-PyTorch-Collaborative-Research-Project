@@ -1,0 +1,26 @@
+# Paper-scale Exchange profile.
+extends: base.yaml
+
+experiment:
+  name: timegrad_exchange_paper
+
+dataset:
+  benchmark: exchange
+  name: exchange_rate_nips
+  prediction_length: 30
+
+model:
+  context_length: 30
+  lags: [1, 2]
+  scaling: true
+
+validation:
+  windows: 5
+
+outputs:
+  checkpoint: models/saved_models/exchange_best.pt
+  history_csv: outputs/reports/exchange/training_history.csv
+  evaluation_report: outputs/reports/exchange/evaluation.json
+  run_summary: outputs/reports/exchange/run_summary.json
+  loss_plot: outputs/plots/exchange/training_loss.png
+  forecast_plot: outputs/plots/exchange/forecast.png

@@ -1,0 +1,42 @@
+{
+  "benchmark": "exchange",
+  "clip_nonnegative": false,
+  "dataset": "exchange_rate_nips",
+  "full_target_dim": 8,
+  "metrics": {
+    "CRPS_sum": 0.005122779302926124,
+    "CRPS_sum_unnormalized_mean": 0.031809239590940376,
+    "ND": 0.010625303084191223,
+    "NRMSE": 0.016343436852563058,
+    "coverage_50": 0.43,
+    "coverage_90": 0.79,
+    "empirical_CRPS": 0.007602313445017267,
+    "empirical_CRPS_sum": 0.004888831939814874
+  },
+  "num_samples": 100,
+  "paper_protocol_checks": {
+    "all_rolling_windows": true,
+    "context_equals_horizon": true,
+    "diffusion_schedule": true,
+    "full_target_dimension": true,
+    "lstm_architecture": true,
+    "noise_embedding": true,
+    "one_hundred_samples": true,
+    "optimizer_settings": true,
+    "reference_lags": true,
+    "reference_scaling": true,
+    "validation_interval": true,
+    "wavenet_architecture": true
+  },
+  "paper_protocol_complete": true,
+  "paper_reference": {
+    "CRPS_sum_mean": 0.006,
+    "CRPS_sum_reported_uncertainty": 0.001,
+    "independent_runs": 10,
+    "source": "TimeGrad paper Table 2"
+  },
+  "prediction_length": 30,
+  "rolling_windows_evaluated": 5,
+  "scaling": true,
+  "target_dim": 8
+}

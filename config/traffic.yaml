@@ -1,0 +1,26 @@
+# Paper-scale Traffic profile. The paper explicitly does not scale Traffic.
+extends: base.yaml
+
+experiment:
+  name: timegrad_traffic_paper
+
+dataset:
+  benchmark: traffic
+  name: traffic_nips
+  prediction_length: 24
+
+model:
+  context_length: 24
+  lags: [1, 24, 168]
+  scaling: false
+
+validation:
+  windows: 7
+
+outputs:
+  checkpoint: models/saved_models/traffic_best.pt
+  history_csv: outputs/reports/traffic/training_history.csv
+  evaluation_report: outputs/reports/traffic/evaluation.json
+  run_summary: outputs/reports/traffic/run_summary.json
+  loss_plot: outputs/plots/traffic/training_loss.png
+  forecast_plot: outputs/plots/traffic/forecast.png

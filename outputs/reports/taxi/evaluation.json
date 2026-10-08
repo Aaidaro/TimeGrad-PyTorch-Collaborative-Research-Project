@@ -1,0 +1,42 @@
+{
+  "benchmark": "taxi",
+  "clip_nonnegative": false,
+  "dataset": "taxi_30min",
+  "full_target_dim": 1214,
+  "metrics": {
+    "CRPS_sum": 0.1352158210806504,
+    "CRPS_sum_unnormalized_mean": 1209.2114933605164,
+    "ND": 0.3818722598927181,
+    "NRMSE": 0.612955938879817,
+    "coverage_50": 0.3755099239036636,
+    "coverage_90": 0.7778355936690986,
+    "empirical_CRPS": 0.2810024574269036,
+    "empirical_CRPS_sum": 0.13050134638977223
+  },
+  "num_samples": 100,
+  "paper_protocol_checks": {
+    "all_rolling_windows": true,
+    "context_equals_horizon": true,
+    "diffusion_schedule": true,
+    "full_target_dimension": true,
+    "lstm_architecture": true,
+    "noise_embedding": true,
+    "one_hundred_samples": true,
+    "optimizer_settings": true,
+    "reference_lags": true,
+    "reference_scaling": true,
+    "validation_interval": true,
+    "wavenet_architecture": true
+  },
+  "paper_protocol_complete": true,
+  "paper_reference": {
+    "CRPS_sum_mean": 0.114,
+    "CRPS_sum_reported_uncertainty": 0.02,
+    "independent_runs": 10,
+    "source": "TimeGrad paper Table 2"
+  },
+  "prediction_length": 24,
+  "rolling_windows_evaluated": 56,
+  "scaling": true,
+  "target_dim": 1214
+}
