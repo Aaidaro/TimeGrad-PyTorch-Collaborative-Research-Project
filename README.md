@@ -102,7 +102,7 @@ The LSTM input concatenates normalized lagged observations, learned *dimension-i
 \qquad
 \mathbf{h}_t=\mathrm{LSTM}(\mathbf{u}_t,\mathbf{h}_{t-1}),
 \qquad
-\mathbf{r}_t=W_c\mathbf{h}_t+\mathbf{b}_c.
+\mathbf{r}_t=W_c\mathbf{h}_t+\mathbf{b}_c
 ```
 
 The implementation uses a two-layer LSTM with **40 hidden units** and maps its state to a **100-dimensional conditioner**. The time features are sinusoidal encodings of frequency-dependent calendar attributes. The lag configuration is dataset-specific; it is **not** universally `[1, 24, 168]`.
@@ -524,21 +524,3 @@ Several natural, falsifiable next experiments follow from this implementation: (
 **[5]** A. Alexandrov et al. **GluonTS: Probabilistic and Neural Time Series Modeling in Python.** *JMLR*, 2020. [JMLR](https://www.jmlr.org/papers/v21/19-820.html).
 
 **Original TimeGrad code:** [Zalando Research / pytorch-ts](https://github.com/zalandoresearch/pytorch-ts/tree/master/pts/model/time_grad). The present project is a separate reproduction and is **not represented as the original authors' software**.
-
-If you use the **method**, please cite the original paper:
-
-```bibtex
-@InProceedings{pmlr-v139-rasul21a,
-  title     = {Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Time Series Forecasting},
-  author    = {Rasul, Kashif and Seward, Calvin and Schuster, Ingmar and Vollgraf, Roland},
-  booktitle = {Proceedings of the 38th International Conference on Machine Learning},
-  pages     = {8857--8868},
-  year      = {2021},
-  volume    = {139},
-  series    = {Proceedings of Machine Learning Research},
-  publisher = {PMLR},
-  url       = {https://proceedings.mlr.press/v139/rasul21a.html}
-}
-```
-
-> **Licensing note:** the supplied project snapshot contains no top-level `LICENSE` file. Before publishing, choose and add a license consistent with any third-party code and dataset terms. This README does not assert a license on your behalf.
